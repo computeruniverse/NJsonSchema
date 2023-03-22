@@ -17,7 +17,8 @@ public partial class Build
     [Parameter] [Secret] string MyGetApiKey;
 
     string ApiKeyToUse => IsTaggedBuild ? NuGetApiKey : MyGetApiKey;
-    string SourceToUse => IsTaggedBuild ? NuGetSource : MyGetGetSource;
+    //##CU## use github nuget
+    string SourceToUse => "https://nuget.pkg.github.com/computeruniverse/index.json";
 
     Target Publish => _ => _
         .OnlyWhenDynamic(() => IsRunningOnWindows && (GitRepository.IsOnMainOrMasterBranch() || IsTaggedBuild))
