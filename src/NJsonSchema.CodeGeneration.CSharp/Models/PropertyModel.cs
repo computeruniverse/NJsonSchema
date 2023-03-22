@@ -49,7 +49,7 @@ namespace NJsonSchema.CodeGeneration.CSharp.Models
         public string Description => _property.Description;
 
         //##CU##
-        /// <summary>Gets the description.</summary>
+        /// <summary>Gets the ClassAttributes.</summary>
         public ICollection<string> ClassAttributes => _property.ClassAttributes;
         //##CU##
         

@@ -437,7 +437,7 @@ namespace NJsonSchema
         [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
         public virtual string Description { get; set; }
         //##CU##
-        /// <summary>Gets or sets the description. </summary>
+        /// <summary>Gets or sets a list the classAttributes. </summary>
         [JsonProperty("classAttributes", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
         public virtual ICollection<string> ClassAttributes { get; set; }
         //##CU##

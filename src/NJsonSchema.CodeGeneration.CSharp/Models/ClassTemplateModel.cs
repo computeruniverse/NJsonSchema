@@ -145,10 +145,10 @@ namespace NJsonSchema.CodeGeneration.CSharp.Models
         public bool InheritsExceptionSchema => _resolver.ExceptionSchema != null &&
                                                _schema?.InheritsSchema(_resolver.ExceptionSchema) == true;
         //##CU##
-        /// <summary>Gets a value indicating whether the class inherits from exception.</summary>
+        /// <summary>Checks if ClassAttributes exits</summary>
         public bool RenderClassAttributes => _schema.ClassAttributes != null && _schema.ClassAttributes.Count != 0;
 
-        /// <summary>Gets a value indicating whether the class inherits from exception.</summary>
+        /// <summary>Prepares the Attribute List</summary>
         public string RenderClassAttributeValues
         {
             get
