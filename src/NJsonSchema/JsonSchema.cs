@@ -436,7 +436,12 @@ namespace NJsonSchema
         /// <summary>Gets or sets the description. </summary>
         [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
         public virtual string Description { get; set; }
-
+        //##CU##
+        /// <summary>Gets or sets the description. </summary>
+        [JsonProperty("classAttributes", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        public virtual ICollection<string> ClassAttributes { get; set; }
+        //##CU##
+        
         /// <summary>Gets the object types (as enum flags). </summary>
         [JsonIgnore]
         public JsonObjectType Type

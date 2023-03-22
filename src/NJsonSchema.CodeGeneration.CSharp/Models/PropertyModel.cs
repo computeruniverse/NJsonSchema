@@ -6,6 +6,7 @@
 // <author>Rico Suter, mail@rsuter.com</author>
 //-----------------------------------------------------------------------
 
+using System.Collections.Generic;
 using System.Globalization;
 using NJsonSchema.CodeGeneration.Models;
 
@@ -47,6 +48,11 @@ namespace NJsonSchema.CodeGeneration.CSharp.Models
         /// <summary>Gets the description.</summary>
         public string Description => _property.Description;
 
+        //##CU##
+        /// <summary>Gets the description.</summary>
+        public ICollection<string> ClassAttributes => _property.ClassAttributes;
+        //##CU##
+        
         /// <summary>Gets the name of the field.</summary>
         public string FieldName => "_" + ConversionUtilities.ConvertToLowerCamelCase(PropertyName, true);
 
