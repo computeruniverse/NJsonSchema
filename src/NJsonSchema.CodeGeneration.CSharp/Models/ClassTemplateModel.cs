@@ -8,6 +8,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using NJsonSchema.CodeGeneration.Models;
 
 namespace NJsonSchema.CodeGeneration.CSharp.Models
@@ -143,6 +144,26 @@ namespace NJsonSchema.CodeGeneration.CSharp.Models
         /// <summary>Gets a value indicating whether the class inherits from exception.</summary>
         public bool InheritsExceptionSchema => _resolver.ExceptionSchema != null &&
                                                _schema?.InheritsSchema(_resolver.ExceptionSchema) == true;
+        //##CU##
+        /// <summary>Gets a value indicating whether the class inherits from exception.</summary>
+        public bool RenderClassAttributes => _schema.ClassAttributes != null && _schema.ClassAttributes.Count != 0;
+
+        /// <summary>Gets a value indicating whether the class inherits from exception.</summary>
+        public string RenderClassAttributeValues
+        {
+            get
+            {
+                var classAttributeBuilder = new StringBuilder();
+
+                foreach (var classAttribute in _schema.ClassAttributes)
+                {
+                    classAttributeBuilder.AppendLine(classAttribute);
+                }
+                
+                return classAttributeBuilder.ToString().TrimEnd('\n').TrimEnd('\r');
+            }
+        }
+        //##CU##
 
         /// <summary>Gets a value indicating whether to use the DateFormatConverter.</summary>
         public bool UseDateFormatConverter => _settings.DateType.StartsWith("System.Date");
