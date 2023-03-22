@@ -43,8 +43,8 @@ jobs:
       - name: Run './build.cmd Compile Test Pack Publish'
         run: ./build.cmd Compile Test Pack Publish
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-          MYGET_API_KEY: ${{ secrets.MYGET_API_KEY }}
+          NUGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          MYGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v1
         with:
           name: artifacts
